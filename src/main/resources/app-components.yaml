@@ -1,0 +1,22 @@
+frontend:
+  angular:
+    run: true
+    gitInit: true
+    dockerfile: true
+backend:
+  springBoot:
+    run: true
+    gitInit: true
+    dockerfile: true
+database:
+  mysql:
+    run: true
+    gitInit: true
+    dockerfile: true
+    randomData: true
+    phpMyAdmin: true
+container:
+  docker:
+    run: true
+    cleanup: false
+    startup: false
