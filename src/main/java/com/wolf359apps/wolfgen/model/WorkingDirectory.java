@@ -10,11 +10,9 @@ import java.util.Optional;
 @Getter
 public class WorkingDirectory {
 
-	private final Path path;
-
-	@Setter
-	private App.Info appInfo;
-	private Path     projectFolder;
+	private final Path     path;
+	private       App.Info appInfo;
+	private       Path     projectFolder;
 
 	public WorkingDirectory(Path path) {
 		this.path = path;

@@ -55,9 +55,9 @@ public class AngularProjectGenerator implements Generator, GitGenerator, DockerG
 				workingDirectory.getFrontendAngularDirectory()
 		);
 
-		modifyEnvironmentTs();
+		// modifyEnvironmentTs();
 
-		modifyEnvironmentProdTs();
+		// modifyEnvironmentDevelopmentTs();
 
 		modifyTSConfigJson();
 
@@ -83,59 +83,43 @@ public class AngularProjectGenerator implements Generator, GitGenerator, DockerG
 
 	}
 
-	private void modifyEnvironmentTs() {
-
-		final Path target = workingDirectory
-				.getFrontendAngularDirectory()
-				.resolve(
-						Path.of("src", "environments", "environment.ts")
-				);
-		final List<String> lines = FileUtil.readFile(target);
-
-		// add comma
-		fileModifierService.replaceLine(
-				lines,
-				"  production: false",
-				"\tproduction: false,"
-		);
-
-		// add line
-		fileModifierService.addAfter(
-				lines,
-				"\tproduction: false,",
-				"\tbackendUrl: 'http://localhost:8080'"
-		);
-
-		// save file
-		FileUtil.createFile(target, lines);
-
-	}
-
-	private void modifyEnvironmentProdTs() {
-
-		final Path target = workingDirectory.getFrontendAngularDirectory().resolve(
-				Path.of("src", "environments", "environment.prod.ts")
-		);
-		final List<String> lines = FileUtil.readFile(target);
-
-		// add comma
-		fileModifierService.replaceLine(
-				lines,
-				"  production: true",
-				"\tproduction: true,"
-		);
-
-		// add line
-		fileModifierService.addAfter(
-				lines,
-				"\tproduction: true,",
-				"\tbackendUrl: 'http://localhost:8080'"
-		);
-
-		// save file
-		FileUtil.createFile(target, lines);
-
-	}
+//	private void modifyEnvironmentTs() {
+//
+//		final List<String> lines = new ArrayList<>();
+//		lines.add("export const environment = {");
+//		lines.add("\tproduction: true");
+//		lines.add("\tbackendUrl: 'http://localhost:8080'");
+//		lines.add("};");
+//
+//		final Path target = workingDirectory
+//				.getFrontendAngularDirectory()
+//				.resolve(
+//						Path.of("src", "environments", "environment.ts")
+//				);
+//
+//		// save file
+//		FileUtil.createFile(target, lines);
+//
+//	}
+//
+//	private void modifyEnvironmentDevelopmentTs() {
+//
+//		final List<String> lines = new ArrayList<>();
+//		lines.add("export const environment = {");
+//		lines.add("\tproduction: false");
+//		lines.add("\tbackendUrl: 'http://localhost:8080'");
+//		lines.add("};");
+//
+//		final Path target = workingDirectory
+//				.getFrontendAngularDirectory()
+//				.resolve(
+//						Path.of("src", "environments", "environment.development.ts")
+//				);
+//
+//		// save file
+//		FileUtil.createFile(target, lines);
+//
+//	}
 
 	private void modifyTSConfigJson() {
 

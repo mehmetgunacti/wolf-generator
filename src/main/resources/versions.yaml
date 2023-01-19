@@ -15,21 +15,21 @@ asciidoctor: "1.5.8"
 springMessaging: "5.3.10"
 
 # Frontend
-angular: "14"
+angular: "15"
 
-primeNg: "14"
+primeNg: "15"
 primeFlex: "3"
-primeIcons: "5"
+primeIcons: "6"
 
-ngrxEffects: "14"
-ngrxStore: "14"
-ngrxDevtools: "14"
+ngrxEffects: "15"
+ngrxStore: "15"
+ngrxDevtools: "15"
 
 ngxProgressbar: "8"
 ngxTranslateCore: "14"
 ngxTranslateHttpLoader: "7"
 
-ngxToastr: "15.0.0"
+ngxToastr: "16"
 ng2StompJs: "8.0.0"
-lodashEs: "4.17.6"
-immer: "9.0.15"
+lodashEs: "4"
+immer: "9"

@@ -254,7 +254,7 @@ public class FileUtil {
 			builder.directory(folder);
 
 			// start process
-			log.info("Starting process [" + folder.getAbsolutePath() + " " + String.join(" ", builder.command()) + "]");
+			log.info("Starting process [" + folder.getAbsolutePath() + File.separator + String.join(" ", builder.command()) + "]");
 			final Process process = builder.start();
 			final long    pid     = process.pid();
 			log.info("Process started with PID " + pid);

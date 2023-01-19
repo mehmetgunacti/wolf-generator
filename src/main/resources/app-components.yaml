@@ -5,18 +5,20 @@ frontend:
     dockerfile: true
 backend:
   springBoot:
-    run: true
+    run: false
     gitInit: true
     dockerfile: true
 database:
   mysql:
-    run: true
+    run: false
     gitInit: true
     dockerfile: true
     randomData: true
     phpMyAdmin: true
 container:
   docker:
-    run: true
+    run: false
     cleanup: false
     startup: false
+  phpMyAdmin:
+    run: false

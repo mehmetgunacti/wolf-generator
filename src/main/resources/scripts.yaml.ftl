@@ -16,6 +16,8 @@ angular:
     #- command: [ "ng", "new", "${ info.artifactId }", "--directory=frontend", "--commit=false", "--interactive=false", "--routing=false", "--skipGit=true", "--strict=true", "--style=scss" ]
     - command: [ "ng", "add", "@angular-eslint/schematics@${ version.angular }", "--skip-confirmation" ]
       run: true
+    - command: [ "ng", "g", "environments"]
+      run: false
     #  directory: "${ info.artifactId }-frontend"
     - command: [ "npm", "install", "@angular/cdk@${ version.angular }", "lodash-es", "primeng@${ version.primeNg }", "primeflex@${ version.primeFlex }", "primeicons@${ version.primeIcons }", "@ngrx/effects@${ version.ngrxEffects }", "@ngrx/store@${ version.ngrxStore }", "immer@${ version.immer }", "ngx-progressbar@${ version.ngxProgressbar }", "ngx-toastr@${ version.ngxToastr }", "@stomp/ng2-stompjs@${ version.ng2StompJs }", "@ngx-translate/core@${ version.ngxTranslateCore }", "@ngx-translate/http-loader@${ version.ngxTranslateHttpLoader }" ]
       run: true
