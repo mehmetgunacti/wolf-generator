@@ -10,8 +10,7 @@ import * as selectors from 'store/selectors';
 
 @Component({
 	selector: 'app-core-page',
-	templateUrl: './core-page.component.html',
-	styleUrls: ['./core-page.component.scss']
+	templateUrl: './core-page.component.html'
 })
 export class CorePageComponent implements OnDestroy {
 
